@@ -116,6 +116,7 @@ export class EditUsuarioComponent implements OnInit {
       formData.append('name', this.usuarioForm.get("name")?.value);
       formData.append('lastname', this.usuarioForm.get("lastname")?.value);
       formData.append('username', this.usuarioForm.get("username")?.value);
+      formData.append('password', this.usuarioForm.get("password")?.value);
       formData.append('photo', this.data.photo);
       formData.append('idRol', this.usuarioForm.get("idRol")?.value);
 

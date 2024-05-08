@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    BACKEND_URL: 'https://5dpw687c-3000.brs.devtunnels.ms/' + 'api/v1/',
+    BACKEND_URL: 'http://localhost:3000/' + 'api/v1/',
 }
 
 
