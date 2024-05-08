@@ -1,0 +1,15 @@
+<form class="registration-form" fxLayout="column" [formGroup]="tallaForm">
+    <div class="form-group">
+        <h3 class="m-0 font-weight-bold color__text_primary">Crear una nueva talla</h3>
+
+    </div>
+    <div class="form-group">
+        <input type="text" formControlName="nombre" class="form-control form-control-user" aria-describedby="emailHelp"
+            placeholder="Nombre de la talla">
+    </div>
+
+    <button (click)="registrar()" class="btn btn-primary btn-user btn-block btn__color__primary">
+        Crear
+    </button>
+
+</form>

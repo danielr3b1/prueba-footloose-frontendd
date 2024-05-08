@@ -1,0 +1,15 @@
+.position {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: hidden;
+
+}
+
+.color {
+    background: rgb(223, 83, 83);
+    color: white;
+    overflow-y: hidden;
+}

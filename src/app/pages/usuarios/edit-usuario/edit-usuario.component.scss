@@ -1,0 +1,37 @@
+.registration-form {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.registration-form mat-form-field {
+    width: 100%;
+}
+
+.registration-form button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.registration-form img {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

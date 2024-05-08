@@ -1,0 +1,60 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h2>Modelos</h2>
+</div>
+<div class="search-container">
+
+  <!-- Actual search box -->
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input matInput type="text" class="form-control" placeholder="Search" (keyup)="filterTable($event)">
+  </div>
+
+  <!-- <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Filtro de la Tabla Marcas</mat-label>
+      <input matInput placeholder="Ingresa y apreta el boton azul" (keyup)="filterTable($event)">
+      <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field> -->
+
+  <div>
+    <button class="btn btn-danger" color="primary" (click)="openCreate()">Agregar modelo</button>
+  </div>
+
+</div>
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let modeloItems"> {{modeloItems.idModelo}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef> Modelo </th>
+      <td mat-cell *matCellDef="let modeloItems"> {{modeloItems.nombreModelo}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let modeloItems">
+        <div class="row__table__img">
+          <a class="btn btn-success" matTooltip="Editar" (click)="openUpdate(modeloItems)">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a class="btn btn-danger ml-2" matTooltip="Editar" (click)="openDelete(modeloItems.idModelo)">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]" style="margin-top: 0;"></mat-paginator>
+</div>

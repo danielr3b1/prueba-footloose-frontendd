@@ -1,0 +1,19 @@
+.container1 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Para ocupar toda la altura de la ventana */
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .app-sidebar {
+    width: 200px; /* Ancho del sidebar */
+  }
+  
+  .content-wrapper {
+    flex: 1;
+  }
+  

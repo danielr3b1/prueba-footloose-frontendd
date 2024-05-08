@@ -1,0 +1,66 @@
+
+<form class="registration-form" fxLayout="column">
+    <h2>Creacion de un Rol</h2>
+    <label class="mt-2">Ingrese nombre:</label>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Nombres" [(ngModel)]="nombreRol" [ngModelOptions]="{standalone: true}" class="-mb-5">
+    </mat-form-field>
+
+
+<div class="col-md-10 ml-16 -mt-3" style="max-width: 100%; padding: 5px 0 0 0;">
+    <div class="card card-secondary">
+        <div class="card-header">
+            <h3 class="card-title">Permisos</h3>
+        </div>
+
+        <div class="table-responsive">
+            
+            
+            <div class="row" style="margin: 0;">
+            @for (headerRol of rolItems; track headerRol) {
+                    <div class="col-lg-4" style="min-width: 50%;">
+    
+                        <!-- Custom Text Color Utilities -->
+                        <div class="card shadow mb-4">
+
+
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">{{headerRol.name}}</h6>
+                            </div>
+
+                @for (rol of headerRol.childList; track rol; let i = $index) {
+
+                    <div class="card-body">
+                        
+                        <div class="content">
+                            <input
+                            type="checkbox"
+                            (change)="handleCheckbox(headerRol)"
+                            class="checkbox"
+                            [id]="rol.id"
+                            [(ngModel)]="rol.isSelect"
+                            [ngModelOptions]="{standalone: true}"
+                            />
+                            <span>{{ rol.name }}</span>
+                        </div>
+                    </div>
+
+                    
+                } 
+                        </div>
+                
+                    </div>
+
+                
+            }
+            </div> 
+
+        </div>
+    </div>
+</div>
+
+
+
+<button mat-raised-button class="mt-2" color="primary" (click)="registrar()">Crear</button>
+
+</form>

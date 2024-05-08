@@ -1,0 +1,81 @@
+@import 'ngx-toastr/toastr';
+
+:root {
+    --primary-color: #470952;
+    --secondary-color: #f7323f;
+    --primary-down-color: #470952;
+    --secondary-down-color: #5C0E50;
+    --hover-primary-color: rgba(74, 9, 82, 0.8);
+}
+//71, 9, 82 #470952
+//92, 14, 80 #5C0E50
+//247, 50, 63 #f7323f
+
+.color__primary {
+    background-color: var(--primary-color);
+}
+
+.color__secundary {
+    background-color: var(--secondary-color);
+}
+
+.color__down__primary {
+    background-color: var(--primary-down-color);
+}
+
+.color__down__secundary {
+    background-color: var(--secondary-down-color);
+}
+
+
+.color__text_primary {
+    color: var(--primary-color);
+}
+
+.color__text_secundary {
+    color: var(--secondary-color);
+}
+
+.gradient__up__sidebar {
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.gradient__up__header {
+    background-image: linear-gradient(to bottom, var(--primary-down-color), var(--secondary-down-color));
+}
+
+.row__table__img {
+    display: flex;
+}
+
+.img__table {
+    width: 27px;
+}
+
+.content_img_table {
+    margin-left: 3px;
+}
+
+.btn__color__primary {
+    background-color: var(--secondary-down-color);
+    transition: background-color 0.3s ease; // Transición suave para el cambio de color
+
+    &:hover {
+        background-color: var(--hover-primary-color); // Oscurece el color al hacer hover
+    }
+}
+
+.wrapper {
+    height: 100%;
+}
+
+
+/*html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}*/

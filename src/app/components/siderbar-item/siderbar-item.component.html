@@ -1,0 +1,16 @@
+@for (headerItem of navbarItems; track headerItem) {
+
+<div class="sidebar-heading">
+    {{ headerItem.name }}
+</div>
+
+@for (item of headerItem.childList; track item) {
+<li class="nav-item">
+    <a class="nav-link" routerLink="{{ item.ruta }}">
+        <i class="{{ item.icon }}"></i>
+        <span>{{item.name}}</span>
+    </a>
+</li>
+}
+<hr class="sidebar-divider">
+}

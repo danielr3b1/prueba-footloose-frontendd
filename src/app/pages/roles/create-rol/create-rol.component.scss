@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed #414244;
+    border-radius: 15px;
+    padding: 20px;
+    gap: 15px;
+}
+  .content {
+    display: flex;
+    gap: 20px;
+  }
+  .checkbox {
+    appearance: none;
+    overflow: hidden;
+    min-width: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+    border: 2px solid rgb(191, 134, 209);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+  }
+  .checkbox:checked {
+    border: 2px solid rgb(92, 14, 80);
+    background: linear-gradient(135deg, rgb(71, 9, 82) 0%, rgb(163, 73, 164) 100%);
+    box-shadow: -5px -5px 30px rgba(71, 9, 82, 1), 5px 5px 30px rgba(247, 50, 63, 1);
+  }
+
+  // form {
+//     padding-left: 40px;
+//     padding-top: 30px;
+//     padding-right: 40px;
+//     padding-bottom: 40px;
+// }
+.registration-form {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.registration-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.registration-form mat-form-field {
+  width: 100%;
+}
+
+.registration-form button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.registration-form img {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

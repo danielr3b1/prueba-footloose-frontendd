@@ -1,0 +1,61 @@
+<form class="registration-form" fxLayout="column" [formGroup]="productoForm">
+    <h2>Modificación de un Producto</h2>
+    <label class="mt-2">Ingrese nombre:</label>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Nombre de Producto" formControlName="nombreProducto">
+    </mat-form-field>
+
+    <label class="mt-2">Elije la Marca del producto:</label>
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Marca</mat-label>
+        <mat-select formControlName="idMarca">
+            <ng-container *ngFor="let marca of marcaList">
+                <mat-option [value]="marca.idMarca">{{ marca.nombreMarca }}</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+    <label class="mt-2">Elije el Modelo del producto:</label>
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Modelo</mat-label>
+        <mat-select formControlName="idModelo">
+            <ng-container *ngFor="let modelo of modeloList">
+                <mat-option [value]="modelo.idModelo">{{ modelo.nombreModelo }}</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+    <label class="mt-2">Elije el Color del producto:</label>
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Color</mat-label>
+        <mat-select formControlName="idColor">
+            <ng-container *ngFor="let color of colorList">
+                <mat-option [value]="color.idColor">{{ color.nombreColor }}</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+    <label class="mt-2">Elije la Talla del producto:</label>
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Talla</mat-label>
+        <mat-select formControlName="idTalla">
+            <ng-container *ngFor="let talla of tallaList">
+                <mat-option [value]="talla.idTalla">{{ talla.nombreTalla }}</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+    <label class="mt-2">Ingrese el precio de venta:</label>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Precio de Venta" formControlName="precioVenta">
+    </mat-form-field>
+
+    <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)">
+    <button mat-button color="primary" (click)="fileInput.click()">Agregar Foto</button>
+
+    <!-- Mostrar la imagen seleccionada -->
+    <img *ngIf="imagePreview" [src]="imagePreview" alt="Imagen seleccionada" width="200">
+
+    <button mat-raised-button class="mt-2" color="primary" (click)="registrar()"
+        [disabled]="!productoForm.valid">Modificar</button>
+</form>

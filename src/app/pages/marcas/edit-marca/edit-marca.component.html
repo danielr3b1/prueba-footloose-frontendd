@@ -1,0 +1,15 @@
+<form class="registration-form" fxLayout="column" [formGroup]="marcaForm">
+    <div class="form-group">
+        <h3 class="m-0 font-weight-bold color__text_primary">Editar una Marca</h3>
+
+    </div>
+    <div class="form-group">
+        <input type="text" formControlName="nombre" class="form-control form-control-user" aria-describedby="emailHelp"
+            placeholder="Nombre de usuario">
+    </div>
+
+    <button (click)="actualizar()" class="btn btn-primary btn-user btn-block btn__color__primary">
+        Actualizar
+    </button>
+
+</form>

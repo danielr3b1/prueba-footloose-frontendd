@@ -1,0 +1,49 @@
+<form class="registration-form" fxLayout="column" [formGroup]="usuarioForm">
+    <h2>Creacion de un Usuarios</h2>
+
+
+    <label class="mt-2">Ingrese nombre:</label>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Nombre de Usuario" formControlName="name">
+    </mat-form-field>
+
+    <label class="mt-2">Ingrese apellido:</label>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Apellido de Usuario" formControlName="lastname">
+    </mat-form-field>
+
+    <label class="mt-2">Ingrese username:</label>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Usuario" formControlName="username">
+    </mat-form-field>
+
+    <label class="mt-2">Ingrese password:</label>
+    <mat-form-field>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+
+
+    <label class="mt-2">Elije el rol del Usuario</label>
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Rol</mat-label>
+        <mat-select formControlName="idRol">
+            <ng-container *ngFor="let rol of rolesList">
+                <mat-option [value]="rol.id">{{ rol.nombre }}</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+
+    <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)">
+    <button mat-button color="primary" (click)="fileInput.click()">Agregar Foto</button>
+
+    <!-- Mostrar la imagen seleccionada -->
+    <img *ngIf="imagePreview" [src]="imagePreview" alt="Imagen seleccionada" width="200">
+
+    <button mat-raised-button class="mt-2" color="primary" (click)="actualizar()"
+        [disabled]="!usuarioForm.valid">Crear</button>
+</form>
